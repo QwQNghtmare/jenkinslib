@@ -19,7 +19,9 @@ pipeline {
             steps {
                 input id: 'Go', message: 'do we continue?', ok: 'yes,continue', parameters: [choice(choices: ['yes', 'no'], description: '', name: 'test')], submitter: 'admin'
                 echo 'hello'
-                tool.PrintMs('abc')
+                script {
+                      tools.PrintMs("abc")
+                }
             }
         }
     }
